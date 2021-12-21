@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hello WebSocket</title>
+    <script src="webjars/sockjs-client/1.0.2/sockjs.js"></script>
+    <script src="webjars/stomp-websocket/2.3.3/stomp.js"></script>
+    <script type="text/javascript">
+        var stompClient = null;
+
+        function setConnected(connected) {
+            document.getElementById('connect').disabled = connected;
+            document.getElementById('disconnect').disabled = !connected;
+            document.getElementById('conversationDiv').style.visibility = connected ? 'visible' : 'hidden';
+            document.getElementById('response').innerHTML = '';
+        }
+
+        function connect() {
+            var socket = new SockJS('/web');
+            stompClient = Stomp.over(socket);
+            stompClient.connect({}, function(frame) {
+                setConnected(true);
+                console.log('Connected: ' + frame);
+                stompClient.subscribe('/topic/sending', function(greeting){
+                    showGreeting(JSON.parse(greeting.body).content);
+                });
+            });
+        }
+
+        function disconnect() {
+            stompClient.disconnect();
+            setConnected(false);
+            console.log("Disconnected");
+        }
+
+        function sendMess() {
+            var mess = document.getElementById('mess').value;
+            var username = document.getElementById('username').value;
+            stompClient.send("/app/web", {}, JSON.stringify({ 'username' : username, 'mess': mess }));
+        }
+
+        function showGreeting(message) {
+            var response = document.getElementById('response');
+            var p = document.createElement('p');
+            p.style.wordWrap = 'break-word';
+            p.appendChild(document.createTextNode(message));
+            response.appendChild(p);
+        }
+    </script>
+</head>
+<body>
+<div>
+    <div>
+        <button id="connect" onclick="connect();">Connect</button>
+        <button id="disconnect" disabled="disabled" onclick="disconnect();">Disconnect</button>
+    </div>
+    <div id="conversationDiv">
+        <label>Username</label><input type="text" id="username" />
+        <label>Write some message</label><input type="text" id="mess" />
+        <button id="sendMess" onclick="sendMess();">Send</button>
+        <p id="response"></p>
+    </div>
+</div>
+</body>
+</html>
