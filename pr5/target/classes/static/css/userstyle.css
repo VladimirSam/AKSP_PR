@@ -1,0 +1,16 @@
+body{
+    background-image: url("../images/fon2.jpg") ;
+}
+.sps{
+    margin-left:auto;
+    margin-right:auto;
+    width: 70%;
+    height: 180px;
+    margin-top: 50px;
+    border-radius: 5px;
+    background: #e9f4ffbf;
+    padding: 10px;
+    text-align: center;
+    font-size: 30px;
+    font-family: Bandicoot;
+}

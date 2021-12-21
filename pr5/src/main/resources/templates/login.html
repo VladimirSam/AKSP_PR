@@ -1,0 +1,41 @@
+
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <link  rel="stylesheet" th:href="@{/css/loginstyle.css}" type="text/css" />
+    <meta charset="UTF-8">
+    <title>Login</title>
+</head>
+<body>
+<form th:action="@{/login}" method="post">
+    <input checked="" id="signin" name="action" type="radio" value="signin">
+
+    <div id="wrapper">
+        <input type="text" name="username" placeholder="Имя пользователя" required>
+        <input name="password" id="pass" placeholder="Пароль" type="password" required>
+
+    </div>
+    <button type="submit">
+        <span>
+            <br>
+      Войти
+    </span>
+    </button>
+</form>
+
+
+<script type="text/javascript">
+
+</script>
+
+</body>
+<!--<body>
+<h2>Login Page</h2>
+<form th:action="@{/login}" method="post">
+    username:<input type="text" name="username">
+    password:<input type="text" name="password">
+    <input type="submit" value="login">
+</form>
+</body>
+-->
+</html>

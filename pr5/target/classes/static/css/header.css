@@ -1,0 +1,68 @@
+
+
+
+.header{
+    width: 100%;
+    background: #b5e1fe;
+    height: 55px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+
+}
+
+.container{
+    margin-left:auto;
+    margin-right:auto;
+    width: 40%; /* Ширина слоя в пикселах */
+    height: 200px; /* Высота слоя в пикселах */
+    margin-top: 60px;	/* Отступ сверху */
+    background: #87c6eb; /* Цвет фона */
+    border: solid 1px black; /* Параметры рамки вокруг */
+    padding: 10px; /* Поля вокруг текста */
+    border-radius: 10px;
+    text-align: center;
+    font-size: 21px;
+    font-family: Сomic Sans MS;
+}
+
+.header a {
+    font-family: Lucida Sans Unicode;
+    color: #000000;
+    text-transform: uppercase;
+    font-size: 20px;
+    letter-spacing: 5px;
+    text-decoration: none;
+    padding-left: 20px;
+    float: right;
+}
+body{
+    background-image: url("../images/fon2.jpg") ;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+    background-size: cover;
+}
+.container1 {
+    margin-left:auto;
+    margin-right:auto;
+    width: 90%;
+    height: 150%;
+    margin-top: 50px;
+    border-radius: 5px;
+    background: #ffffffbf;
+    padding: 10px;
+    text-align: center;
+    font-size: 20px;
+    font-family: Bandicoot;
+}
+.empty_punkt{
+    flex-grow: 1;
+}
+.header_logo {
+    justify-self: flex-start;
+}
+.header_img{
+    height: 47px ;
+    width: auto;
+}

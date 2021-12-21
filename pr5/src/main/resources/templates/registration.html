@@ -1,0 +1,48 @@
+
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <link  rel="stylesheet" th:href="@{/css/regstyle.css}" type="text/css" />
+    <meta charset="UTF-8">
+    <title>Registration</title>
+</head>
+<body>
+<form th:action="@{/registration}" method="post">
+    <input checked="" id="signin" name="action" type="radio" value="signin">
+
+
+
+    <div id="wrapper">
+
+        <input type="text" name="username" placeholder="Ваше имя" required>
+        <input name="password" id="pass" placeholder="Пароль" type="password" required>
+        <input type="text" name="email"  placeholder="Email" required>
+        <input type="text" name="phone"  placeholder="Телефон" required>
+
+
+    </div>
+    <button type="submit">
+    <span>
+        <br>
+      Зарегистрироваться
+    </span>
+    </button>
+</form>
+
+
+<script type="text/javascript">
+
+</script>
+
+</body>
+<!--<h2>Registration Page</h2>
+<form th:action="@{/registration}" method="post">
+    username:<input type="text" name="username">
+    password:<input type="text" name="password">
+    email:<input type="text" name="email">
+    phone:<input type="text" name="phone">
+    <input type="submit" value="registration">
+</form>
+</body>
+</html>
+-->

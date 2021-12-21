@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Оставить заявку</title>
+
+    <link media="all" rel="stylesheet" th:href="@{/css/zakazstyle.css}" type="text/css">
+
+</head>
+<body>
+<header>
+    <div class="header_menu">
+
+        <span class="empty_punkt"></span>
+    </div>
+</header>
+<div class="tablo">
+<iframe frameborder="0" style="-moz-box-shadow: 0 2px 3px rgba(0, 0, 0, 0.5);
+-webkit-box-shadow: 0 2px 3px rgba(0, 0, 0, 0.5); box-shadow: 0 2px 3px rgba(0, 0, 0, 0.5); overflow:
+hidden; border: 0; width: 700px; height: 642px;" src="https://rasp.yandex.ru/informers/station/9600215/?size=15&amp;color=6&amp;type=tablo"></iframe>
+</div>
+<div class="order">
+    <div class="orderbox">
+        <hr>
+        <form th:action="@{/order}" method="post">
+            <p><label for="request">Введите номер желаемого рейса</label>
+                <textarea type='text' name="request" id="request" class="inbox2 request" required></textarea>
+
+
+            <p><input type='submit' value="Отправить заявку" class="butt2">
+        </form>
+    </div>
+</div>
+</body>
+</html>
